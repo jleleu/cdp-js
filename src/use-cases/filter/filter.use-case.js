@@ -1,5 +1,5 @@
 export const FilterUseCase = database => pattern => {
-  const countries = database.findAll();
+  const countries = database.findAllCountries();
 
   const animalMatch = a => new RegExp(pattern, 'i').test(a.name);
   const peopleWithAnimalMatch = p => p.animals.some(animalMatch);

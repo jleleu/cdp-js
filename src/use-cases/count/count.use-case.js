@@ -1,5 +1,5 @@
 export const CountUseCase = database => () => {
-  const countries = database.findAll();
+  const countries = database.findAllCountries();
 
   countries.forEach(c => {
     c.name = `${c.name} [${c.people.length}]`;

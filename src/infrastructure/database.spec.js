@@ -3,7 +3,7 @@ import { describe, expect, it } from '@jest/globals';
 
 describe('Database', () => {
   it('should load data (countries, peoples and animals)', () => {
-    const countries = Database.findAll();
+    const countries = Database.findAllCountries();
 
     expect(countries).toHaveLength(5);
     expect(countries.some(c => c.name === 'Dillauti')).toBeTruthy();
