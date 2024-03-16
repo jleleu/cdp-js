@@ -42,8 +42,7 @@ describe('Parse Args', () => {
     });
 
     it('should return the key for --count', () => {
-      const args = parseArgs(['--count']);
-      expect(args).toEqual({ key: '--count', value: undefined });
+      expect(parseArgs(['--count'])).toEqual({ key: '--count', value: undefined });
     });
   });
 });
