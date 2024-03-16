@@ -9,7 +9,8 @@ function main() {
   const args = parseArgs(argv.slice(2));
 
   if (args.error) {
-    console.log(args.error + '\n\n' + args.usage);
+    const usage = `Usage: node app.js --filter=pattern | --count`;
+    console.log(args.error + '\n\n' + usage);
     process.exit(1);
   }
 

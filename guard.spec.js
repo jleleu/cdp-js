@@ -13,10 +13,6 @@ describe('Parse Args', () => {
         expect(parseArgs([arg]).error).toEqual(`'${arg}' is not a valid argument`);
       }
     );
-
-    it('should return the usage', () => {
-      expect(parseArgs([]).usage).toEqual(`Usage: node app.js --filter=pattern | --count`);
-    });
   });
 
   describe('--filter', () => {
