@@ -3,7 +3,7 @@ import { FilterUseCase } from './filter.use-case.js';
 
 describe('Filter Use Case', () => {
   let FakeDatabase;
-  let filterAnimals;
+  let filter;
 
   beforeAll(() => {
     FakeDatabase = {
@@ -35,7 +35,7 @@ describe('Filter Use Case', () => {
   });
 
   beforeEach(() => {
-    filterAnimals = FilterUseCase(FakeDatabase);
+    filter = FilterUseCase(FakeDatabase);
   });
 
   it.each([
@@ -44,8 +44,8 @@ describe('Filter Use Case', () => {
     ['Ze', 'Tohabdal'],
     ['bra', 'Tohabdal']
   ])('should only return countries containing matching animals', (animal, country) => {
-    expect(filterAnimals(animal)).toHaveLength(1);
-    expect(filterAnimals(animal)[0].name).toEqual(country);
+    expect(filter(animal)).toHaveLength(1);
+    expect(filter(animal)[0].name).toEqual(country);
   });
 
   it.each([
@@ -54,15 +54,15 @@ describe('Filter Use Case', () => {
     ['Ze', 'Effie Houghton'],
     ['bra', 'Effie Houghton']
   ])('should only return people containing matching animals', (animal, people) => {
-    expect(filterAnimals(animal)[0].people).toHaveLength(1);
-    expect(filterAnimals(animal)[0].people[0].name).toEqual(people);
+    expect(filter(animal)[0].people).toHaveLength(1);
+    expect(filter(animal)[0].people[0].name).toEqual(people);
   });
 
   it.each([['Anoa'], ['Rhea'], ['Ring-tailed Lemur']])(
     'should only return matching animals',
     animal => {
-      expect(filterAnimals(animal)[0].people[0].animals).toHaveLength(1);
-      expect(filterAnimals(animal)[0].people[0].animals[0].name).toEqual(animal);
+      expect(filter(animal)[0].people[0].animals).toHaveLength(1);
+      expect(filter(animal)[0].people[0].animals[0].name).toEqual(animal);
     }
   );
 });
