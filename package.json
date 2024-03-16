@@ -1,0 +1,20 @@
+{
+  "name": "cdp-js",
+  "version": "1.0.0",
+  "description": "CDP Javascript Test",
+  "keywords": [
+    "cdp",
+    "recruitment",
+    "javascript"
+  ],
+  "license": "ISC",
+  "author": "Julien Leleu",
+  "main": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "prettier": "3.2.5"
+  }
+}
