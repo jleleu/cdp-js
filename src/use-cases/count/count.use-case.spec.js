@@ -7,7 +7,7 @@ describe('Count Use Case', () => {
 
   beforeAll(() => {
     FakeDatabase = {
-      findAll: () => [
+      findAllCountries: () => [
         {
           name: 'Dillauti',
           people: [
