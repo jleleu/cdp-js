@@ -10,7 +10,7 @@
   "license": "ISC",
   "author": "Julien Leleu",
   "type": "module",
-  "main": "",
+  "main": "app.js",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
